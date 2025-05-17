@@ -22,6 +22,15 @@ This example shows how to back up allFortiAnalyzer unit system settings to a fil
 exe backup all-settings ftp x.x.x.x /ftpbackup/allsetting/faz.dat ftpuser 12345678
 ```
 
+## Restore Procedure
+
+To restore this backup on a new FAZ instance (with same FortiAnalyzer version!):
+
+```
+execute restore all-settings ftp x.x.x.x /ftpbackup/allsetting/faz.dat ftpuser 12345678
+```
+or using Web UI
+
 # Blue-Green Deployment for FortiAnalyzer in AWS with Terraform
 
 This set of Terraform files facilitates a blue-green deployment strategy for FortiAnalyzer instances in AWS. This approach allows for zero-downtime upgrades by deploying a new instance alongside the existing one before switching traffic over.
