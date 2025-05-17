@@ -1,5 +1,4 @@
 /* 
-  main.tf
   Primary configuration file defining AWS resources for FortiAnalyzer blue-green deployment
 */
 
