@@ -16,11 +16,14 @@ Regardless of the destination, the destination FortiAnalyzer must have at least 
 Go to System Settings -> System Configuration -> Backup.
 
 2. Using the CLI:
-This example shows how to back up allFortiAnalyzer unit system settings to a file named faz.cfg on a server at IP address 10.5.50.40 using the ftpuser username and a password of 12345678:
+
+## Backup Procedure
 
 ```
 exe backup all-settings ftp x.x.x.x /ftpbackup/allsetting/faz.dat ftpuser 12345678
 ```
+
+or using Web UI
 
 ## Restore Procedure
 
@@ -30,6 +33,26 @@ To restore this backup on a new FAZ instance (with same FortiAnalyzer version!):
 execute restore all-settings ftp x.x.x.x /ftpbackup/allsetting/faz.dat ftpuser 12345678
 ```
 or using Web UI
+
+### Note Backup and Restore
+
+Uncheck the Overwite current IP and routing settings option to avoid any duplicate IP conflict with the old system.
+Once the new FortiAnalyzer is ready to receive the logs from the FortiGate, all the senders need to be configured so that the new IP address is used to receive logs.
+To do this, use the following CLI command:
+
+```
+config log fortianalyzer_new 
+```
+
+### Log Backup only 
+
+```
+exe backup logs all ftp x.x.x.x ftpuser 12345678 /
+```
+
+### FAZ Fetching Logs (when using 2 FAZ instances) 
+
+https://docs.fortinet.com/document/fortianalyzer/6.2.0/cookbook/366512/fetching-logs-from-one-fortianalyzer-to-another
 
 # Blue-Green Deployment for FortiAnalyzer in AWS with Terraform
 
