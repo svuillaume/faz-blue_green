@@ -1,8 +1,3 @@
-/*
-  outputs.tf
-  Defines outputs to display after terraform apply
-*/
-
 # FortiAnalyzer Instance IDs
 output "faz_instance_ids" {
   description = "IDs of the FortiAnalyzer instances"
