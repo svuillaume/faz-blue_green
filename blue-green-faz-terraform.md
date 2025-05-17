@@ -35,4 +35,4 @@ This set of Terraform files facilitates a blue-green deployment strategy for For
 
 ## Implementation Details
 
-This implementation uses Terraform's `for_each` construct with a map of AMI IDs to create and manage multiple instances. This approach allows for smooth addition and removal of instances by simply updating the map variable.
+This implementation uses Terraform's `for_each` construct with a map of AMI IDs to create and manage multiple instances.
