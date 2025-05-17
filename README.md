@@ -58,32 +58,52 @@ This implementation uses Terraform's `for_each` construct with a map of AMI IDs 
 
 # How to use the script
 
-How to Use These Files
+1. First, make the helper script executable:
 
-First, make the helper script executable:
-bashchmod +x deploy.sh
+```
+chmod +x deploy.sh
+```
 
-Follow the blue-green deployment process:
-bash# Initialize Terraform
+3. Follow the blue-green deployment process, terraform init:
+
+```
 ./deploy.sh --init
 
+```
 ## Deploy Blue instance
+
+```
 ./deploy.sh --deploy-blue
+```
+
 ### Edit terraform.tfvars to set your actual values
-terraform apply
 
+```
+terraform apply
+```
 ## Add Green instance alongside Blue
-./deploy.sh --add-green
-### Edit terraform.tfvars to set your Green AMI ID
-terraform apply
 
+```
+./deploy.sh --add-green
+```
+
+### Edit terraform.tfvars to set your Green AMI ID
+
+```
+terraform apply
+```
 ## After verifying Green instance, cut over completely to Green
+```
 ./deploy.sh --cutover-green
 terraform apply
-
+```
 ### If you need to rollback:
-bash./deploy.sh --rollback
-terraform apply
 
+```
+./deploy.sh --rollback
+terraform apply
+```
 ### Check deployment status at any time:
-bash./deploy.sh --status
+```
+./deploy.sh --status
+```
