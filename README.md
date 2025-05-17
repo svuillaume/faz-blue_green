@@ -54,3 +54,36 @@ This set of Terraform files facilitates a blue-green deployment strategy for For
 ## Implementation Details
 
 This implementation uses Terraform's `for_each` construct with a map of AMI IDs to create and manage multiple instances.
+
+
+# How to use the script
+
+How to Use These Files
+
+First, make the helper script executable:
+bashchmod +x deploy.sh
+
+Follow the blue-green deployment process:
+bash# Initialize Terraform
+./deploy.sh --init
+
+## Deploy Blue instance
+./deploy.sh --deploy-blue
+### Edit terraform.tfvars to set your actual values
+terraform apply
+
+## Add Green instance alongside Blue
+./deploy.sh --add-green
+### Edit terraform.tfvars to set your Green AMI ID
+terraform apply
+
+## After verifying Green instance, cut over completely to Green
+./deploy.sh --cutover-green
+terraform apply
+
+### If you need to rollback:
+bash./deploy.sh --rollback
+terraform apply
+
+### Check deployment status at any time:
+bash./deploy.sh --status
