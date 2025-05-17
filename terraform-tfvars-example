@@ -1,0 +1,42 @@
+/*
+  terraform.tfvars.example
+  Example variable values file - copy to terraform.tfvars and customize
+*/
+
+# AWS region
+aws_region = "us-east-1"
+
+# Environment tag
+environment = "prod"
+
+# STEP 1: Initial deployment - Blue only
+# faz_ami_ids = {
+#   blue = "ami-0abcdef1234567890"  # Replace with your Blue AMI ID
+# }
+
+# STEP 2: Blue-Green deployment - Both instances
+# faz_ami_ids = {
+#   blue = "ami-0abcdef1234567890"  # Blue AMI ID
+#   green = "ami-0fedcba0987654321"  # Green AMI ID
+# }
+
+# STEP 3: Cutover - Green only
+# faz_ami_ids = {
+#   green = "ami-0fedcba0987654321"  # Green AMI ID
+# }
+
+# Uncomment and modify one of the above faz_ami_ids blocks based on your deployment stage
+
+# Network configuration
+subnet_id = "subnet-0abcdef1234567890"
+security_group_ids = ["sg-0abcdef1234567890"]
+
+# SSH key
+key_name = "your-ssh-key-name"
+
+# Instance type
+instance_type = "m5.large"  # Adjust based on your requirements
+
+# Volume configuration
+root_volume_size = 50
+data_volume_size = 100
