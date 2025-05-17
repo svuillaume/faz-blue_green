@@ -2,12 +2,25 @@
 
 This is a guide on how to migrate from FortiAnalyzer to another FortiAnalyzer of the same type or model. To transfer the config to a different HW or VM type, use the exe migrate all-settings CLI command or contact customer support.
 
-When migrating VM FortiAnalyzer 
+# When migrating VM FortiAnalyzer 
 
-1-) Two valid VM-licensed instances are needed
-2-) Use the same VM license within the 7 day grace period before the license becomes invalid)
+1. Two valid VM-licensed instances are needed
+2. Use the same VM license within the 7 day grace period before the license becomes invalid)
 
 Regardless of the destination, the destination FortiAnalyzer must have at least the same ADOM quota allocated as the source FortiAnalyzer (the 'diag log device' CLI command can be used for verification).
+
+# FTP, sFTP, scp is a strict requirement to fully back FAZ system settings and log
+
+1. Config backup and restore process.
+
+Go to System Settings -> System Configuration -> Backup.
+
+2. Using the CLI:
+This example shows how to back up allFortiAnalyzer unit system settings to a file named faz.cfg on a server at IP address 10.5.50.40 using the ftpuser username and a password of 12345678:
+
+```
+exe backup all-settings ftp x.x.x.x /ftpbackup/allsetting/faz.dat ftpuser 12345678
+```
 
 # Blue-Green Deployment for FortiAnalyzer in AWS with Terraform
 
