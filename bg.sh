@@ -31,7 +31,7 @@ backup_tfvars() {
 }
 
 terraform_init() {
-  echo "🚀 Initializing Terraform..."
+  echo "Terraform init"
   terraform init
 }
 
