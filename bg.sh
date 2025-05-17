@@ -1,5 +1,5 @@
 #!/bin/bash
-# deploy.sh - Helper script for managing blue-green FortiAnalyzer deployments
+# bg.sh - Helper script for managing blue-green FortiAnalyzer deployments
 
 # Set script to exit immediately if a command exits with a non-zero status
 set -e
