@@ -1,7 +1,9 @@
 # Note for FortiAnalyzer Blue Green
 
 This is a guide on how to migrate from FortiAnalyzer to another FortiAnalyzer of the same type or model. To transfer the config to a different HW or VM type, use the exe migrate all-settings CLI command or contact customer support.
+
 When migrating VM FortiAnalyzer data, two valid VM-licensed instances are needed. (Alternatively, use the same VM license within the 7 day grace period before the license becomes invalid).
+
 Regardless of the destination, the destination FortiAnalyzer must have at least the same ADOM quota allocated as the source FortiAnalyzer (the 'diag log device' CLI command can be used for verification).
 
 # Blue-Green Deployment for FortiAnalyzer in AWS with Terraform
