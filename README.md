@@ -76,34 +76,39 @@ chmod +x deploy.sh
 ./deploy.sh --deploy-blue
 ```
 
-### Edit terraform.tfvars to set your actual values
+Edit terraform.tfvars to set your actual values
 
 ```
 terraform apply
 ```
+
 ## Add Green instance alongside Blue
 
 ```
 ./deploy.sh --add-green
 ```
 
-### Edit terraform.tfvars to set your Green AMI ID
+Edit terraform.tfvars to set your Green AMI ID
 
 ```
 terraform apply
 ```
 ## After verifying Green instance, cut over completely to Green
+
 ```
 ./deploy.sh --cutover-green
 terraform apply
 ```
+
 ### If you need to rollback:
 
 ```
 ./deploy.sh --rollback
 terraform apply
 ```
+
 ### Check deployment status at any time:
+
 ```
 ./deploy.sh --status
 ```
