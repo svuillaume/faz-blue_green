@@ -1,8 +1,3 @@
-/*
-  variables.tf
-  Defines all variables used in the Terraform configuration
-*/
-
 # AWS Region
 variable "aws_region" {
   description = "AWS region to deploy resources"
