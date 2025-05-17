@@ -1,8 +1,3 @@
-/*
-  terraform.tfvars.example
-  Example variable values file - copy to terraform.tfvars and customize
-*/
-
 # AWS region
 aws_region = "us-east-1"
 
