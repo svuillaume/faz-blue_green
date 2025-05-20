@@ -27,6 +27,8 @@ or using Web UI
 
 ## Restore Procedure
 
+Use execute backup all-settings to preserve full setup (devices, ADOMs, reports).
+
 To restore this backup on a new FAZ instance (with same FortiAnalyzer version!):
 
 ```
@@ -45,6 +47,8 @@ config log fortianalyzer_new
 ```
 
 ### Log Backup only 
+
+Use execute log backup for log archives only.
 
 ```
 exe backup logs all ftp x.x.x.x ftpuser 12345678 /
