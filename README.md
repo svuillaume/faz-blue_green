@@ -97,19 +97,19 @@ This implementation uses Terraform's `for_each` construct with a map of AMI IDs 
 1. First, make the helper script executable:
 
 ```
-chmod +x deploy.sh
+chmod +x bg.sh
 ```
 
 3. Follow the blue-green deployment process, terraform init:
 
 ```
-./deploy.sh --init
+./bg.sh --init
 
 ```
 ## Deploy Blue instance
 
 ```
-./deploy.sh --deploy-blue
+./bg.sh --deploy-blue
 ```
 
 Edit terraform.tfvars to set your actual values
@@ -121,7 +121,7 @@ terraform apply
 ## Add Green instance alongside Blue
 
 ```
-./deploy.sh --add-green
+./bg.sh --add-green
 ```
 
 Edit terraform.tfvars to set your Green AMI ID
@@ -132,19 +132,19 @@ terraform apply
 ## After verifying Green instance, cut over completely to Green
 
 ```
-./deploy.sh --cutover-green
+./bg.sh --cutover-green
 terraform apply
 ```
 
 ### If you need to rollback:
 
 ```
-./deploy.sh --rollback
+./bg.sh --rollback
 terraform apply
 ```
 
 ### Check deployment status at any time:
 
 ```
-./deploy.sh --status
+./bg.sh --status
 ```
