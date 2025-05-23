@@ -9,7 +9,7 @@ This is a guide on how to migrate from FortiAnalyzer to another FortiAnalyzer of
 
 Regardless of the destination, the destination FortiAnalyzer must have at least the same ADOM quota allocated as the source FortiAnalyzer (the 'diag log device' CLI command can be used for verification).
 
-## Backing up configuration files and databases
+## Backing up configuration files and databases or DB > 2.8GB
 
 Back up the FortiAnalyzer configuration file and databases.
 
@@ -27,7 +27,7 @@ execute backup all-settings scp <ip> <path/filename of server> <SSH certificate>
 1. https://docs.fortinet.com/document/fortianalyzer/7.6.2/upgrade-guide/621448/backing-up-configuration-files-and-databases
 2. https://community.fortinet.com/t5/FortiAnalyzer/Technical-Tip-Backup-and-restore-of-FortiAnalyzer-settings-logs/ta-p/191972
 
-## FTP, sFTP, scp is a strict requirement to fully back FAZ system settings and log
+## FAZ UI < 2.8GB
 
 1. Config backup and restore process.
 
