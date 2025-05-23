@@ -9,6 +9,24 @@ This is a guide on how to migrate from FortiAnalyzer to another FortiAnalyzer of
 
 Regardless of the destination, the destination FortiAnalyzer must have at least the same ADOM quota allocated as the source FortiAnalyzer (the 'diag log device' CLI command can be used for verification).
 
+## Backing up configuration files and databases
+
+Back up the FortiAnalyzer configuration file and databases.
+
+It is recommended that you create a system backup file and save this configuration to your local computer. The device configuration file is saved with a .dat extension.
+It is also recommended that you verify the integrity of your backup file.
+
+### Note 
+
+When the database is larger than 2.8 GB, back up the configuration file to an FTP, SFTP, or SCP server using the following CLI command:
+execute backup all-settings {ftp | sftp} <ip> <path/filename of server> <username on server> <password> <crptpasswd>
+execute backup all-settings scp <ip> <path/filename of server> <SSH certificate> <crptpasswd>
+
+### Further details at:
+
+1. https://docs.fortinet.com/document/fortianalyzer/7.6.2/upgrade-guide/621448/backing-up-configuration-files-and-databases
+2. https://community.fortinet.com/t5/FortiAnalyzer/Technical-Tip-Backup-and-restore-of-FortiAnalyzer-settings-logs/ta-p/191972
+
 ## FTP, sFTP, scp is a strict requirement to fully back FAZ system settings and log
 
 1. Config backup and restore process.
@@ -17,7 +35,7 @@ Go to System Settings -> System Configuration -> Backup.
 
 2. Using the CLI:
 
-## Backup Procedure
+## Backup Procedure (using ftp, scp/sftp is however recommended in Public CLoud)
 
 ```
 exe backup all-settings ftp x.x.x.x /ftpbackup/allsetting/faz.dat ftpuser 12345678
